@@ -30,6 +30,7 @@ from custom_components.ecoflow_cloud.sensor import (
     QuotaStatusSensorEntity,
     RemainSensorEntity,
     TempSensorEntity,
+    WattsSensorEntity,
 )
 from custom_components.ecoflow_cloud.switch import BeeperEntity, EnabledEntity
 
@@ -65,6 +66,8 @@ class Delta2Max(BaseInternalDevice):
             # OutWattsSensorEntity(client, self, "pd.carWatts", const.DC_OUT_POWER),
             # the same value as pd.carWatts
             OutWattsSensorEntity(client, self, "mppt.outWatts", const.DC_OUT_POWER),
+            WattsSensorEntity(client, self, "pd.XT150Watts1", "Slave 1 Power"),
+            WattsSensorEntity(client, self, "pd.XT150Watts2", "Slave 2 Power"),
             OutWattsSensorEntity(client, self, "pd.typec1Watts", const.TYPEC_1_OUT_POWER),
             OutWattsSensorEntity(client, self, "pd.typec2Watts", const.TYPEC_2_OUT_POWER),
             OutWattsSensorEntity(client, self, "pd.usb1Watts", const.USB_1_OUT_POWER),

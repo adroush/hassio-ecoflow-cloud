@@ -29,6 +29,7 @@ from custom_components.ecoflow_cloud.sensor import (
     QuotaScheduledStatusSensorEntity,
     QuotaStatusSensorEntity,
     RemainSensorEntity,
+    StateOfHealthSensorEntity,
     TempSensorEntity,
     WattsSensorEntity,
 )
@@ -49,7 +50,7 @@ class Delta2Max(BaseInternalDevice):
             CapacitySensorEntity(client, self, "bms_bmsStatus.designCap", const.MAIN_DESIGN_CAPACITY, False),
             CapacitySensorEntity(client, self, "bms_bmsStatus.fullCap", const.MAIN_FULL_CAPACITY, False),
             CapacitySensorEntity(client, self, "bms_bmsStatus.remainCap", const.MAIN_REMAIN_CAPACITY, False),
-            LevelSensorEntity(client, self, "bms_bmsStatus.soh", const.SOH),
+            StateOfHealthSensorEntity(client, self, "bms_bmsStatus.soh", const.SOH),
             LevelSensorEntity(client, self, "bms_emsStatus.lcdShowSoc", const.COMBINED_BATTERY_LEVEL),
             InWattsSensorEntity(client, self, "pd.wattsInSum", const.TOTAL_IN_POWER),
             OutWattsSensorEntity(client, self, "pd.wattsOutSum", const.TOTAL_OUT_POWER),
@@ -140,7 +141,7 @@ class Delta2Max(BaseInternalDevice):
             CyclesSensorEntity(
                 client, self, "bms_slave_bmsSlaveStatus_1.cycles", const.SLAVE_N_CYCLES % 1, False, True
             ),
-            LevelSensorEntity(client, self, "bms_slave_bmsSlaveStatus_1.soh", const.SLAVE_N_SOH % 1, False, True),
+            StateOfHealthSensorEntity(client, self, "bms_slave_bmsSlaveStatus_1.soh", const.SLAVE_N_SOH % 1, False, True),
             InWattsSensorEntity(
                 client, self, "bms_slave_bmsSlaveStatus_1.inputWatts", const.SLAVE_N_IN_POWER % 1, False, True
             ),
@@ -211,7 +212,7 @@ class Delta2Max(BaseInternalDevice):
             CyclesSensorEntity(
                 client, self, "bms_slave_bmsSlaveStatus_2.cycles", const.SLAVE_N_CYCLES % 2, False, True
             ),
-            LevelSensorEntity(client, self, "bms_slave_bmsSlaveStatus_2.soh", const.SLAVE_N_SOH % 2, False, True),
+            StateOfHealthSensorEntity(client, self, "bms_slave_bmsSlaveStatus_2.soh", const.SLAVE_N_SOH % 2, False, True),
             InWattsSensorEntity(
                 client, self, "bms_slave_bmsSlaveStatus_2.inputWatts", const.SLAVE_N_IN_POWER % 2, False, True
             ),

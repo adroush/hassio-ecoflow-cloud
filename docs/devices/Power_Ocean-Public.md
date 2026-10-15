@@ -17,12 +17,15 @@
 - pcsCPhase.actPwr (`96_1.pcsCPhase.actPwr`)
 - pcsCPhase.reactPwr (`96_1.pcsCPhase.reactPwr`)
 - pcsCPhase.apparentPwr (`96_1.pcsCPhase.apparentPwr`)
+- sysGridPwr (`sysGridPwr`)
+- sysLoadPwr (`sysLoadPwr`)
+- bpPwr (`bpPwr`)
 - mpptPv1.pwr (`96_1.mpptHeartBeat[0].mpptPv[0].pwr`)
 - mpptPv1.amp (`96_1.mpptHeartBeat[0].mpptPv[0].amp`)
 - mpptPv1.vol (`96_1.mpptHeartBeat[0].mpptPv[0].vol`)
 - mpptPv2.pwr (`96_1.mpptHeartBeat[0].mpptPv[1].pwr`)
 - mpptPv2.amp (`96_1.mpptHeartBeat[0].mpptPv[1].amp`)
 - mpptPv2.vol (`96_1.mpptHeartBeat[0].mpptPv[1].vol`)
-- Status (Scheduled)
+- Status
 
 
